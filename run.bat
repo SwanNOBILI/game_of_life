@@ -35,3 +35,6 @@ echo.
 
 rem Retourne au dossier racine
 cd ..
+
+rem Supprime le dossier build
+rmdir /s /q build
