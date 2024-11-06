@@ -1,12 +1,19 @@
 #ifndef LINK_HPP
 #define LINK_HPP
 
+#include "../include/joint.hpp"
+#include <vector>
+
+using namespace std;
+
 class Link {
-    private:
-        double x, y, sx, sy;
     public:
-        Link(double x0, double y0);
+        vector<Joint> joints;
+
+        Link(vector<Joint> j0);
         ~Link();
+
+        void display() const;
 };
 
 #endif // LINK_HPP
