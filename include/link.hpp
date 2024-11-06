@@ -1,5 +1,5 @@
-#ifndef LINK_H
-#define LINK_H
+#ifndef LINK_HPP
+#define LINK_HPP
 
 using namespace std;
 
@@ -11,4 +11,4 @@ class Link {
         ~Link();
 };
 
-#endif
+#endif // LINK_HPP
