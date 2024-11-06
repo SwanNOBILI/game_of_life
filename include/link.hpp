@@ -1,7 +1,5 @@
-#ifndef LINK_H
-#define LINK_H
-
-using namespace std;
+#ifndef LINK_HPP
+#define LINK_HPP
 
 class Link {
     private:
@@ -11,4 +9,4 @@ class Link {
         ~Link();
 };
 
-#endif
+#endif // LINK_HPP

@@ -19,10 +19,6 @@ file(GLOB_RECURSE SOURCES "src/*.cpp")
 # Créer l'exécutable
 add_executable(MonProjet ${SOURCES})
 
-# Spécifie le chemin pour trouver SFML
-set(CMAKE_PREFIX_PATH "C:/SFML-2.6.1")
-message(STATUS "CMAKE_PREFIX_PATH: ${CMAKE_PREFIX_PATH}")
-
 # Configurer SFML
 find_package(SFML 2.6 COMPONENTS graphics window system REQUIRED)
 if (SFML_FOUND)
