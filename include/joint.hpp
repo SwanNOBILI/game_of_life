@@ -18,6 +18,9 @@ public:
     // Méthode pour calculer la distance par rapport à un autre point
     double distance(const Joint& other) const;
 
+    // Méthode pour ajouter de la vitesse
+    void addSpeed();
+
     // Méthode pour afficher les coordonnées du point
     void display() const;
 };

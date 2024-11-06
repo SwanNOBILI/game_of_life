@@ -9,6 +9,11 @@ double Joint::distance(const Joint& other) const {
     return sqrt(pow(other.x - x, 2) + pow(other.y - y, 2));
 }
 
+void Joint::addSpeed() {
+    x += sx;
+    y += sy;
+}
+
 void Joint::display() const {
     cout << "(" << x << ", " << y << ")" << endl;
 }
