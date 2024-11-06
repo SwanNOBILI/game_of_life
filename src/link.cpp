@@ -1,6 +1,15 @@
 #include "../include/link.hpp"
 
-Link::Link(double x0, double y0){
-    x = x0; y = y0;
-    sx = 0; sy = 0;
+using namespace std;
+
+Link::Link(vector<Joint> j0) : joints(j0) {}
+
+void Link::display() const{
+    cout << "Link" << endl;
+    for(int i = 0; i < joints.size(); i++){
+        cout << "Joint " << i;
+        joints[i].display();
+        cout << endl;
+    }
+    cout << endl;
 }
