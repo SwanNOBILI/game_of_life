@@ -56,10 +56,10 @@ RM = "C:\Program Files\CMake\bin\cmake.exe" -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = C:\Users\nobil\Desktop\Projets\jeu_de_la_vie
+CMAKE_SOURCE_DIR = "C:\Users\anisa\Documents\Game Of Life Project\game_of_life"
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = C:\Users\nobil\Desktop\Projets\jeu_de_la_vie\build
+CMAKE_BINARY_DIR = "C:\Users\anisa\Documents\Game Of Life Project\game_of_life\build"
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -86,9 +86,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\nobil\Desktop\Projets\jeu_de_la_vie\build\CMakeFiles C:\Users\nobil\Desktop\Projets\jeu_de_la_vie\build\\CMakeFiles\progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start "C:\Users\anisa\Documents\Game Of Life Project\game_of_life\build\CMakeFiles" "C:\Users\anisa\Documents\Game Of Life Project\game_of_life\build\\CMakeFiles\progress.marks"
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\nobil\Desktop\Projets\jeu_de_la_vie\build\CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start "C:\Users\anisa\Documents\Game Of Life Project\game_of_life\build\CMakeFiles" 0
 .PHONY : all
 
 # The main clean target
@@ -128,6 +128,30 @@ MonProjet/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\MonProjet.dir\build.make CMakeFiles/MonProjet.dir/build
 .PHONY : MonProjet/fast
 
+src/joint.obj: src/joint.cpp.obj
+.PHONY : src/joint.obj
+
+# target to build an object file
+src/joint.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\MonProjet.dir\build.make CMakeFiles/MonProjet.dir/src/joint.cpp.obj
+.PHONY : src/joint.cpp.obj
+
+src/joint.i: src/joint.cpp.i
+.PHONY : src/joint.i
+
+# target to preprocess a source file
+src/joint.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\MonProjet.dir\build.make CMakeFiles/MonProjet.dir/src/joint.cpp.i
+.PHONY : src/joint.cpp.i
+
+src/joint.s: src/joint.cpp.s
+.PHONY : src/joint.s
+
+# target to generate assembly for a file
+src/joint.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\MonProjet.dir\build.make CMakeFiles/MonProjet.dir/src/joint.cpp.s
+.PHONY : src/joint.cpp.s
+
 src/main.obj: src/main.cpp.obj
 .PHONY : src/main.obj
 
@@ -161,6 +185,9 @@ help:
 	@echo ... edit_cache
 	@echo ... rebuild_cache
 	@echo ... MonProjet
+	@echo ... src/joint.obj
+	@echo ... src/joint.i
+	@echo ... src/joint.s
 	@echo ... src/main.obj
 	@echo ... src/main.i
 	@echo ... src/main.s
