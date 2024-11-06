@@ -1,12 +1,14 @@
 #include <SFML/Graphics.hpp>
 
+using namespace sf;
+
 int main() {
-    sf::RenderWindow window(sf::VideoMode(800, 600), "Test SFML");
+    RenderWindow window(VideoMode(800, 600), "Test SFML");
 
     while (window.isOpen()) {
-        sf::Event event;
+        Event event;
         while (window.pollEvent(event)) {
-            if (event.type == sf::Event::Closed)
+            if (event.type == Event::Closed)
                 window.close();
         }
 

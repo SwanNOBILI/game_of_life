@@ -21,8 +21,6 @@ cmake --build .
 if errorlevel 1 (
     echo.
     echo Erreur lors de la compilation du projet.
-    rem Supprime le dossier build
-    rmdir /s /q build
     exit /b
 )
 
