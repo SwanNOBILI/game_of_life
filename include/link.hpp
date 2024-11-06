@@ -1,8 +1,6 @@
 #ifndef LINK_HPP
 #define LINK_HPP
 
-using namespace std;
-
 class Link {
     private:
         double x, y, sx, sy;
