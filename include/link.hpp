@@ -11,7 +11,8 @@ class Link {
         vector<Joint> joints;
 
         Link(vector<Joint> j0);
-        ~Link();
+        
+        ~Link() = default;
 
         void display() const;
 };

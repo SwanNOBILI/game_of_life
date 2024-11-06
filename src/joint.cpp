@@ -15,5 +15,5 @@ void Joint::addSpeed() {
 }
 
 void Joint::display() const {
-    cout << "(" << x << ", " << y << ")" << endl;
+    cout << "(" << x << ", " << y << ")";
 }

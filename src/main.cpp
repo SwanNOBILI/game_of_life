@@ -19,7 +19,10 @@ int main() {
     testJointConstructor();
     testJointDistance();
     testJointAddSpeed();
-    testDisplay();
+    testJointDisplay();
+
+    testLinkConstructor();
+    testLinkDisplay();
 
     return 0;
 }

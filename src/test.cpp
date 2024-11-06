@@ -43,11 +43,37 @@ void testJointAddSpeed() {
     cout << "Test de addSpeed: OK" << endl;
 }
 
-void testDisplay() {
+void testJointDisplay() {
     // Test de la méthode display
     Joint joint(1, 1, 0.5, 0.5);
     joint.addSpeed();  // On applique addSpeed pour modifier les coordonnées
     cout << "Affichage des coordonnées de joint après addSpeed: ";
     joint.display(); // Devrait afficher (1.5, 1.5)
     cout << "Tous les tests ont réussi!" << endl;
+}
+
+void testLinkConstructor(){
+    //Test du constructeur de Link
+    Joint joint1(0, 0);
+    Joint joint2(1, 1);
+
+    // Création d'une instance de Link avec le vecteur de joints
+    Link link({ joint1, joint2 });
+
+    // Test de l'attribut 'joints' de Link (on vérifie sa taille et les coordonnées des joints)
+    assert(link.joints.size() == 2);  // Vérifie que le vecteur contient 3 joints
+    assert(link.joints[0].x == 0 && link.joints[0].y == 0);  // Vérifie les coordonnées du premier joint
+    assert(link.joints[1].x == 1 && link.joints[1].y == 1);  // Vérifie les coordonnées du deuxième joint
+
+    cout << "Test constructeur de Link: OK" << endl;
+
+}
+
+void testLinkDisplay(){
+    Joint joint1(0, 0);
+    Joint joint2(1, 1);
+    Link link({ joint1, joint2 });
+
+    // Test de l'affichage de link
+    link.display();
 }
