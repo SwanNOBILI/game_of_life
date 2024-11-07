@@ -16,6 +16,8 @@ int main() {
     //     window.clear();
     //     window.display();
     // }
+
+    // Tests
     testJointConstructor();
     testJointDistance();
     testJointAddSpeed();

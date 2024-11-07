@@ -47,9 +47,10 @@ void testJointDisplay() {
     // Test de la méthode display
     Joint joint(1, 1, 0.5, 0.5);
     joint.addSpeed();  // On applique addSpeed pour modifier les coordonnées
-    cout << "Affichage des coordonnées de joint après addSpeed: ";
+    // cout << "Affichage des coordonnées de joint après addSpeed: ";
+    cout << "Test affichage de Joint: "<< endl;
     joint.display(); // Devrait afficher (1.5, 1.5)
-    cout << "Tous les tests ont réussi!" << endl;
+    cout << endl;
 }
 
 void testLinkConstructor(){
@@ -75,5 +76,6 @@ void testLinkDisplay(){
     Link link({ joint1, joint2 });
 
     // Test de l'affichage de link
+    cout << "Test affichage de Link: " << endl;
     link.display();
 }
