@@ -14,7 +14,7 @@ void Link::display() const{
         joints[0].display();
         
         // Affichage des autres joints avec une virgule avant
-        for (int i = 1; i < joints.size(); i++) {
+        for (unsigned int i = 1; i < joints.size(); i++) {
             cout << ", ";
             cout << "Joint" << i << ":"; 
             joints[i].display();
