@@ -7,6 +7,15 @@ project(MonProjet)
 # Spécifie le standard C++ à utiliser
 set(CMAKE_CXX_STANDARD 11)
 
+# Activer le mode Debug pour des messages d'erreurs plus détaillés
+set(CMAKE_BUILD_TYPE Debug)
+
+# Activer la verbosité de compilation pour obtenir des informations détaillées
+#set(CMAKE_VERBOSE_MAKEFILE ON)
+
+# Ajouter des options de compilation pour obtenir des messages d'avertissement
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -Wextra -Wpedantic -Werror -Wconversion -g")
+
 # Dossier de destination pour les fichiers compilés
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
 
