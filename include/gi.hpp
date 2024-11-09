@@ -6,12 +6,12 @@
 
 using namespace std;
 
-class WindowApp {
+class GI {
 public:
     RenderWindow window;
     vector<Link> links;
 
-    WindowApp(string name);
+    GI(string name);
 
     void addLink(Link l0);
 

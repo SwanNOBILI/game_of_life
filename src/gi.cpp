@@ -4,15 +4,15 @@
 
 using namespace sf;
 
-WindowApp::WindowApp(string name) : window(VideoMode::getDesktopMode(), name) {}
+GI::GI(string name) : window(VideoMode::getDesktopMode(), name) {}
 
-void WindowApp::addLink(Link l0) {
+void GI::addLink(Link l0) {
     links.push_back(l0);
 }
 
 
 
-void WindowApp::draw() {
+void GI::draw() {
     window.clear(Color::White);
     float r = 10;   // Radius of the Joints
     float h = 8;    // Height of the Links
@@ -44,7 +44,7 @@ void WindowApp::draw() {
     window.display();
 }
 
-void WindowApp::run() {
+void GI::run() {
 
     while (window.isOpen()) {
         Event event;
