@@ -1,31 +1,26 @@
 #include "../include/main.hpp"
 
 int main() {
-    test(Joint);
-    /*
-    RenderWindow window(VideoMode(800, 600), "SFML");
-    while (window.isOpen()) {
-        Event event;
-        while (window.pollEvent(event)) {
-            if (event.type == Event::Closed)
-                window.close();
-        }
+    //test(Joint);
+    short int w = 1800, h = 950;
+    WindowApp app(w, h, "Mart1");
 
-        window.clear();
-        window.display();
-    }*/
+    Joint j1(w/4, h/4), j2(w/2, h/4);
+    Link l0({j1,j2});
+    app.addLink(l0);
+    app.run();
 
     return 0;
 }
 
 void test(Choice testClass){
     switch(testClass){
-        case Joint:
+        case joint:
             testJointConstructor();
-            testJointAddSpeed();
+            testJointUpdatePos();
             testJointDisplay();
             break;
-        case Link:
+        case link:
             testLinkConstructor();
             testLinkDistance();
             testLinkDisplay();

@@ -3,7 +3,7 @@
 
 //Test de Joint
 void testJointConstructor();
-void testJointAddSpeed();
+void testJointUpdatePos();
 void testJointDisplay();
 
 //Test de Link

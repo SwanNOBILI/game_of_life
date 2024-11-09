@@ -3,14 +3,12 @@
 
 class Joint {
 public:
-    double x, y;
-    double sx, sy;
+    float x, y;
 
-    Joint(double x, double y);
-    Joint(double x, double y, double sx, double sy);
+    Joint(float x, float y);
     ~Joint();
 
-    void addSpeed();
+    void updatePos(float sx, float sy);
 
     void display() const;
 };

@@ -1,9 +1,10 @@
 #include <SFML/Graphics.hpp>
 #include "../include/test.hpp"
+#include "../include/gi.hpp"
 
 using namespace std;
 using namespace sf;
 
-enum Choice {Joint, Link};
+enum Choice {joint, link};
 
 void test(Choice testClass);

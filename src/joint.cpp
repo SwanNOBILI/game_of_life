@@ -3,11 +3,10 @@
 
 using namespace std;
 
-Joint::Joint(double x, double y) : x(x), y(y), sx(0), sy(0) {}
-Joint::Joint(double x, double y, double sx, double sy) : x(x), y(y), sx(sx), sy(sy) {}
+Joint::Joint(float x0, float y0) : x(x0), y(y0) {}
 Joint::~Joint() {}
 
-void Joint::addSpeed() {
+void Joint::updatePos(float sx, float sy) {
     x += sx;
     y += sy;
 }
