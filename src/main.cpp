@@ -1,30 +1,34 @@
-#include <SFML/Graphics.hpp>
-#include "../include/test.hpp"
-
-using namespace sf;
+#include "../include/main.hpp"
 
 int main() {
-    // RenderWindow window(VideoMode(800, 600), "Test SFML");
+    test(Joint);
+    /*
+    RenderWindow window(VideoMode(800, 600), "SFML");
+    while (window.isOpen()) {
+        Event event;
+        while (window.pollEvent(event)) {
+            if (event.type == Event::Closed)
+                window.close();
+        }
 
-    // while (window.isOpen()) {
-    //     Event event;
-    //     while (window.pollEvent(event)) {
-    //         if (event.type == Event::Closed)
-    //             window.close();
-    //     }
-
-    //     window.clear();
-    //     window.display();
-    // }
-
-    // Tests
-    testJointConstructor();
-    testJointDistance();
-    testJointAddSpeed();
-    testJointDisplay();
-
-    testLinkConstructor();
-    testLinkDisplay();
+        window.clear();
+        window.display();
+    }*/
 
     return 0;
+}
+
+void test(Choice testClass){
+    switch(testClass){
+        case Joint:
+            testJointConstructor();
+            testJointAddSpeed();
+            testJointDisplay();
+            break;
+        case Link:
+            testLinkConstructor();
+            testLinkDistance();
+            testLinkDisplay();
+            break;
+    }
 }

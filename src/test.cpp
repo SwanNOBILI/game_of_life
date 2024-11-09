@@ -1,81 +1,75 @@
-// test_joint.cpp
 #include "../include/test.hpp"
 #include "../include/joint.hpp"
 #include "../include/link.hpp"
 #include <iostream>
 #include <cassert>
-#include <cmath>  // Inclure cmath pour sqrt
+#include <cmath>
 
 using namespace std;
 
+//--------------------------------------------------------JOINT-------------------------------------------------------//
 void testJointConstructor() {
-    // Test du constructeur avec coordonnées seulement
+    // Test the Constructor with coordinates only
     Joint joint1(0, 0);
     assert(joint1.x == 0);
     assert(joint1.y == 0);
-    cout << "Test constructeur sans vitesse: OK" << endl;
+    cout << "Test Constructor without Speed: OK" << endl;
 
-    // Test du constructeur avec coordonnées et vitesses
+    // Test the Constructor with coordinates and speeds
     Joint joint2(1, 1, 0.5, 0.5);
     assert(joint2.x == 1);
     assert(joint2.y == 1);
     assert(joint2.sx == 0.5);
     assert(joint2.sy == 0.5);
-    cout << "Test constructeur avec vitesse: OK" << endl;
-}
-
-void testJointDistance() {
-    // Test de la méthode distance
-    Joint joint1(0, 0, 0.5, 0.5);
-    Joint joint2(1, 1, 0.5, 0.5);
-    double dist = joint1.distance(joint2);
-    //cout << "Distance entre joint1 et joint2: " << dist << endl;
-    assert(dist == sqrt(2)); 
-    cout << "Test de la distance: OK" << endl;
+    cout << "Test Constructor with Speed:    OK" << endl;
 }
 
 void testJointAddSpeed() {
-    // Test de la méthode addSpeed
     Joint joint(1, 1, 0.5, 0.5);
-    joint.addSpeed();  // Après addSpeed, x et y devraient augmenter de 0.5
-    assert(joint.x == 1.5);  // x devrait être 1 + 0.5 = 1.5
-    assert(joint.y == 1.5);  // y devrait être 1 + 0.5 = 1.5
-    cout << "Test de addSpeed: OK" << endl;
+    joint.addSpeed();  // x increases with sx, y increases with sy: 1 + 0.5 = 1.5 each
+    assert(joint.x == 1.5);
+    assert(joint.y == 1.5);
+    cout << "Test Joint.addSpeed:            OK" << endl;
 }
 
 void testJointDisplay() {
-    // Test de la méthode display
     Joint joint(1, 1, 0.5, 0.5);
-    joint.addSpeed();  // On applique addSpeed pour modifier les coordonnées
-    // cout << "Affichage des coordonnées de joint après addSpeed: ";
-    cout << "Test affichage de Joint: "<< endl;
-    joint.display(); // Devrait afficher (1.5, 1.5)
+    joint.addSpeed();  // Apply addSpeed to modify coordinates
+    cout << "Test Joint.display:             ";
+    joint.display();
     cout << endl;
 }
+//--------------------------------------------------------------------------------------------------------------------//
 
-void testLinkConstructor(){
-    //Test du constructeur de Link
+//--------------------------------------------------------LINK--------------------------------------------------------//
+void testLinkConstructor() {
     Joint joint1(0, 0);
     Joint joint2(1, 1);
+    Link link({joint1, joint2});
 
-    // Création d'une instance de Link avec le vecteur de joints
-    Link link({ joint1, joint2 });
+    assert(link.joints.size() == 2);                            // Check that the vector contains 2 joints
+    assert(link.joints[0].x == 0 && link.joints[0].y == 0);     // Check coordinates of the first joint
+    assert(link.joints[1].x == 1 && link.joints[1].y == 1);     // Check coordinates of the second joint
 
-    // Test de l'attribut 'joints' de Link (on vérifie sa taille et les coordonnées des joints)
-    assert(link.joints.size() == 2);  // Vérifie que le vecteur contient 3 joints
-    assert(link.joints[0].x == 0 && link.joints[0].y == 0);  // Vérifie les coordonnées du premier joint
-    assert(link.joints[1].x == 1 && link.joints[1].y == 1);  // Vérifie les coordonnées du deuxième joint
-
-    cout << "Test constructeur de Link: OK" << endl;
-
+    cout << "Test Link Constructor: OK" << endl;
 }
 
-void testLinkDisplay(){
+void testLinkDistance() {
     Joint joint1(0, 0);
     Joint joint2(1, 1);
-    Link link({ joint1, joint2 });
+    Link link({joint1, joint2});
 
-    // Test de l'affichage de link
-    cout << "Test affichage de Link: " << endl;
+    double link_size = link.getSize();
+    assert(link_size == sqrt(2)); 
+    cout << "Test Link.getSize:     OK" << endl;
+}
+
+void testLinkDisplay() {
+    Joint joint1(0, 0);
+    Joint joint2(1, 1);
+    Link link({joint1, joint2});
+
+    cout << "Test Link.display:     ";
     link.display();
 }
+//--------------------------------------------------------------------------------------------------------------------//

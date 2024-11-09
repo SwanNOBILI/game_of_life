@@ -1,23 +1,27 @@
 #include "../include/link.hpp"
+#include <iostream>
+#include <cmath>
 
 using namespace std;
 
 Link::Link(vector<Joint> j0) : joints(j0) {}
+Link::~Link() {}
 
-void Link::display() const{
-    cout << "Link : ";
+double Link::getSize() const {
+    double size = 0;
+    for (unsigned int i = 0; i < joints.size()-1; i++) {
+        size += sqrt(pow(joints[i].x-joints[i+1].x, 2) + pow(joints[i].y-joints[i+1].y, 2));
+    }
+    return size;
+}
 
-    // On vérifie si la taille du vecteur n'est pas vide
-    if (!joints.empty()) {
-        // Affichage du premier joint sans virgule
-        cout << "Joint0:"; 
-        joints[0].display();
-        
-        // Affichage des autres joints avec une virgule avant
-        for (unsigned int i = 1; i < joints.size(); i++) {
-            cout << ", ";
-            cout << "Joint" << i << ":"; 
-            joints[i].display();
+void Link::display() const {
+    cout << "Link -> ";
+    for (unsigned int i = 0; i < joints.size(); i++) {
+        cout << "Joint_" << i << " = "; 
+        joints[i].display();
+        if (i != joints.size()-1){
+            cout << " & ";
         }
     }
     cout << endl;

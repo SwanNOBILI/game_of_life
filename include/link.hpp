@@ -11,8 +11,9 @@ class Link {
         vector<Joint> joints;
 
         Link(vector<Joint> j0);
-        
-        ~Link() = default;
+        ~Link();
+
+        double getSize() const;
 
         void display() const;
 };

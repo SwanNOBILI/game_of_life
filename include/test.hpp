@@ -3,12 +3,12 @@
 
 //Test de Joint
 void testJointConstructor();
-void testJointDistance();
 void testJointAddSpeed();
 void testJointDisplay();
 
 //Test de Link
 void testLinkConstructor();
+void testLinkDistance();
 void testLinkDisplay();
 
 #endif // TEST_HPP
