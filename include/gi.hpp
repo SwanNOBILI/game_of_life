@@ -11,7 +11,7 @@ public:
     RenderWindow window;
     vector<Link> links;
 
-    WindowApp(short int height, short int weight, string name);
+    WindowApp(string name);
 
     void addLink(Link l0);
 

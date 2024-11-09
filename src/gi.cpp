@@ -4,7 +4,7 @@
 
 using namespace sf;
 
-WindowApp::WindowApp(short int width, short int height, string name) : window(VideoMode(width, height), name) {}
+WindowApp::WindowApp(string name) : window(VideoMode::getDesktopMode(), name) {}
 
 void WindowApp::addLink(Link l0) {
     links.push_back(l0);
@@ -51,10 +51,12 @@ void WindowApp::run() {
         while (window.pollEvent(event)) {
             if (event.type == Event::Closed) {
                 window.close();
-            }else{
-                links[0].moveVoid(0, 5);
             }
         }
+
+
+        links[0].moveVoid(0, 1);
+
         draw();
     }
 }
