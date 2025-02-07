@@ -10,11 +10,11 @@ if not exist build (
 cd build
 
 rem Génère les fichiers Make avec CMake en mode build
-echo Génération des fichiers Make avec CMake...
+echo Generation des fichiers Make avec CMake...
 cmake -G "MinGW Makefiles" -DCMAKE_BUILD_TYPE=build ..
 if errorlevel 1 (
     echo.
-    echo Erreur lors de la génération avec CMake.
+    echo Erreur lors de la generation avec CMake.
     exit /b
 )
 

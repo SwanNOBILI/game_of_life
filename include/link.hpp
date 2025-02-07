@@ -10,15 +10,16 @@ using namespace sf;
 
 class Link {
     public:
-        vector<Joint> joints;
+        Joint joint1;
+        Joint joint2;
 
-        Link(vector<Joint> j0);
+        Link(Joint j1, Joint j2);
         ~Link();
 
         float getEuclideanNorm() const;
-        vector<float> getMotionVector(int i) const;
-        void moveVoid(float sx, float sy);
-        void moveLiquid(int i0, float sx, float sy);
+        vector<float> getMotionVector() const;
+        void moveVoid(float dt);
+        void moveLiquid(int i0, float dt);
 
         void display() const;
 };

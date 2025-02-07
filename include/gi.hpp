@@ -2,6 +2,7 @@
 #define GI_HPP
 
 #include "../include/link.hpp"
+#include "../include/crea.hpp"
 #include <string>
 
 using namespace std;
@@ -9,11 +10,11 @@ using namespace std;
 class GI {
 public:
     RenderWindow window;
-    vector<Link> links;
+    vector<Crea> creatures;
 
     GI(string name);
 
-    void addLink(Link l0);
+    void addCreature(Crea c0);
 
     void draw();
     void run();
